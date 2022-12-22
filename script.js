@@ -17,13 +17,31 @@
 // BONUS 2:
 // Organizzare i singoli membri in card/schede e rendere la pagina gradevole (potete usare lo screen in allegato come spunto
 
-const member = [
-    {name: 'Wayne Barnett', role: 'Founder & CEO', img: 'wayne-barnett-founder.ceo.jpg'},
+const members = [
+    {name: 'Wayne Barnett', role: 'Founder & CEO', img: 'wayne-barnett-founder-ceo.jpg'},
     {name: 'Angela Caroll',role: 'Chief Editor',img: 'angela-caroll-chief-editor.jpg'},
     {name: 'Walter Gordon',role: 'Office Manager',img: 'walter-gordon-office-manager.jpg'},
-    {name: 'Angela Lopez',role: 'Social Media Manager',img: 'angela-lopez-social-media-manager-jpg'},
+    {name: 'Angela Lopez',role: 'Social Media Manager',img: 'angela-lopez-social-media-manager.jpg'},
     {name: 'Scott Estrada',role: 'Developer',img: 'scott-estrada-developer.jpg'},
     {name: 'Barbara Ramos',role: 'Graphic Designer',img: 'barbara-ramos-graphic-designer.jpg'}
 ]
 
-console.log(member);
+const list = document.getElementById('list');
+
+let listItems = '';
+
+for (let i = 0; i < members.length; i++) {
+    const member = members[i];
+
+    listItems += 
+    `
+    <li>${member.name}</li>
+    <li>${member.role}</li>
+    <li><img src="img/${member.img}" alt="Foto-Profilo"></li>
+    `
+}
+
+list.innerHTML += listItems;
+
+
+
